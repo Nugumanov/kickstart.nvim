@@ -70,6 +70,7 @@ return {
         embed_model = 'text-embedding-3-small',
         endpoint = 'https://api.deepseek.com/v1',
       },
+
       --rag = {
       --  indexes = {
       --    core_tools = {
