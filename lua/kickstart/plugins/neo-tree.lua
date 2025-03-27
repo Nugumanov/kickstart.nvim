@@ -15,12 +15,12 @@ return {
   },
   opts = {
     event_handlers = {
-      {
-        event = 'file_opened',
-        handler = function()
-          vim.cmd 'Neotree close'
-        end,
-      },
+      --{
+      --  event = 'file_opened',
+      --  handler = function()
+      --    vim.cmd 'Neotree close'
+      --  end,
+      --},
       {
         event = 'neo_tree_buffer_enter',
         handler = function()
