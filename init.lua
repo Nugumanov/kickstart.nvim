@@ -453,24 +453,46 @@ require('lazy').setup(
         -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
         -- - sd'   - [S]urround [D]elete [']quotes
         -- - sr)'  - [S]urround [R]eplace [)] [']
+
         require('mini.surround').setup()
+
+        local blocked_filetypes = {
+          ['neo-tree'] = true,
+          ['Avante'] = true,
+          ['AvanteSelectedFiles'] = true,
+          ['AvanteInput'] = true,
+        }
 
         local statusline = require 'mini.statusline'
 
         statusline.setup {
           use_icons = vim.g.have_nerd_font,
+          content = {
+            active = function()
+              if blocked_filetypes[vim.bo.filetype] then
+                return ''
+              end
+              statusline.section_location = function()
+                return ''
+              end
+              statusline.section_filetype = function()
+                return ''
+              end
+              return statusline.section_location {} .. statusline.section_filename {}
+              --.. statusline.section_searchcount {}
+              --.. statusline.section_diagnostics {}
+              --.. statusline.section_lsp {}
+              --.. statusline.section_diff {}
+              --.. statusline.section_filetype {}
+            end,
+            inactive = function()
+              if blocked_filetypes[vim.bo.filetype] then
+                return ''
+              end
+              return '%F '
+            end,
+          },
         }
-
-        ---@diagnostic disable-next-line: duplicate-set-field
-        statusline.section_location = function()
-          --return '%2l:%-2v'
-          return ''
-        end
-
-        ---@diagnostic disable-next-line: duplicate-set-field
-        statusline.section_fileinfo = function()
-          return ''
-        end
       end,
     },
 
