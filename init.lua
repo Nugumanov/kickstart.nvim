@@ -456,6 +456,12 @@ require('lazy').setup(
 
         require('mini.surround').setup()
 
+        require('mini.animate').setup()
+
+        require('mini.comment').setup()
+
+        require('mini.pairs').setup()
+
         local blocked_filetypes = {
           ['neo-tree'] = true,
           ['Avante'] = true,
