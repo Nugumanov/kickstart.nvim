@@ -1,0 +1,131 @@
+return {
+  {
+    'yetone/avante.nvim',
+    event = 'VeryLazy',
+    version = false,
+    build = 'make BUILD_FROM_SOURCE=true',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'echasnovski/mini.pick',
+      'nvim-telescope/telescope.nvim',
+      'hrsh7th/nvim-cmp',
+      'ibhagwan/fzf-lua',
+      'nvim-tree/nvim-web-devicons',
+      'zbirenbaum/copilot.lua',
+      {
+        'HakonHarnes/img-clip.nvim',
+        event = 'VeryLazy',
+        opts = {
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = { insert_mode = true },
+            use_absolute_path = true,
+          },
+        },
+      },
+      {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = { file_types = { 'markdown', 'Avante' } },
+        ft = { 'markdown', 'Avante' },
+      },
+    },
+
+    opts = {
+      provider = 'deepseek',
+      vendors = {
+        deepseek = {
+          __inherited_from = 'openai',
+          api_key_name = 'DEEPSEEK_API_KEY',
+          endpoint = 'https://api.deepseek.com',
+          model = 'deepseek-coder',
+        },
+      },
+
+      -- Add RAG configuration here
+      --rag_service = {
+      --   enabled = true,
+      --   host_mount = '~/Projects/RAG/',
+      --   provider = 'deepseek',
+      --   llm_model = 'deepseek-coder',
+      --   embed_model = 'text-embedding-3-small',
+      --   endpoint = 'https://api.deepseek.com/v1',
+      -- },
+
+      --rag = {
+      --  indexes = {
+      --    core_tools = {
+      --      index_dir = vim.fn.expand '~/Projects/RAG/indexes/core_tools',
+      --      patterns = {
+      --        include = {
+      --          '~/Projects/RAG/documents/tools/**/*.md',
+      --          '~/Projects/RAG/documents/tools/**/*.pdf',
+      --          '~/Projects/RAG/documents/internal/*.txt',
+      --        },
+      --        exclude = {
+      --          '**/archive/**',
+      --          '**/drafts/**',
+      --          '**/*.bin',
+      --          '**/*.zip',
+      --        },
+      --      },
+      --      chunk_size = 1200,
+      --      chunk_overlap = 200,
+      --      embedding = {
+      --        provider = 'openai',
+      --        model = 'text-embedding-3-small',
+      --      },
+      --    },
+      --  },
+      --  default_index = 'core_tools',
+      --},
+      tools = {
+        web_search = {
+          enabled = true,
+          provider = 'tavily',
+        },
+        repository_actions = {
+          enabled = true,
+        },
+      },
+      git = {
+        enabled = true,
+        root_dir = vim.fn.getcwd(),
+      },
+    },
+
+    config = function(_, opts)
+      require('avante').setup(opts)
+
+      -- Add RAG keymaps
+      --vim.keymap.set('n', '<leader>ra', function()
+      --  require('avante.ask').ask '@rag '
+      --end, { desc = '[R]AG [A]sk' })
+
+      --vim.keymap.set('n', '<leader>rs', function()
+      --  require('avante.rag').interactive_search {
+      --    index = 'core_tools',
+      --    preview = true,
+      --  }
+      --end, { desc = '[R]AG [S]earch' })
+
+      --vim.keymap.set('n', '<leader>ru', function()
+      --  require('avante.rag').index_dir('~/Projects/RAG/documents/tools/', { index = 'core_tools', force = true })
+      --  vim.notify('RAG index updated!', vim.log.levels.INFO)
+      --end, { desc = '[R]AG [U]pdate' })
+    end,
+  },
+  --
+  -- required by avante.nvim to use a web-search
+  {
+    -- Make sure to set this up properly if you have lazy=true
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {
+      file_types = { 'markdown', 'Avante' },
+    },
+    ft = { 'markdown', 'Avante' },
+  },
+}
