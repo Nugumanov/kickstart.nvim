@@ -14,6 +14,8 @@ return {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
+    bind_to_cwd = true,
+
     event_handlers = {
       --{
       --  event = 'file_opened',
@@ -58,6 +60,7 @@ return {
           ['oa'] = 'avante_add_files', -- avante.nvim add files/folder to Avante Selected Files
         },
       },
+
       -- The following setup is for avante.nvim integration
       commands = {
         avante_add_files = function(state)
