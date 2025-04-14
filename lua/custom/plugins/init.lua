@@ -5,7 +5,7 @@ return {
   { import = 'custom/plugins/modules/focus' },
   { import = 'custom/plugins/modules/obsidian' },
   { import = 'custom/plugins/modules/oil' },
-  { import = 'custom/plugins/modules/gitlab' },
+  --{ import = 'custom/plugins/modules/gitlab' },
 
   { 'knubie/vim-kitty-navigator' },
 

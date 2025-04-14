@@ -2,7 +2,7 @@ return {
   'tpope/vim-fugitive',
   config = function()
     -- Fugitive keymaps
-    vim.keymap.set('n', '<leader>gs', '<cmd>Git<CR>', { desc = '[G]it [S]tatus' })
+    vim.keymap.set('n', '<leader>gs', '<cmd>Git<CR><C-w>3+', { desc = '[G]it [S]tatus' })
     vim.keymap.set('n', '<leader>gd', '<cmd>Gdiffsplit<CR>', { desc = '[G]it [D]iff' })
     vim.keymap.set('n', '<leader>gc', '<cmd>Git commit<CR>', { desc = '[G]it [C]ommit' })
     vim.keymap.set('n', '<leader>gp', '<cmd>Git push<CR>', { desc = '[G]it [P]ush' })

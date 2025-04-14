@@ -54,6 +54,10 @@ vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+vim.api.nvim_set_hl(0, 'CursorLine', { bg = '#2c2c2c' }) -- Example background color
+
+-- Configure cursor appearance and blinking
+vim.opt.guicursor = 'n-v-c-sm:block-Cursor/lCursor-blinkwait175-blinkoff150-blinkon175'
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
