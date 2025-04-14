@@ -42,7 +42,26 @@ return {
           api_key_name = 'DEEPSEEK_API_KEY',
           endpoint = 'https://api.deepseek.com',
           model = 'deepseek-coder',
+          -- Add DeepSeek-specific token limits
+          max_tokens = 4096, -- Reduced from default OpenAI values
+          context_window = 8192, -- Matches DeepSeek's maximum context length
+          temperature = 0.7,
         },
+      },
+
+      windows = {
+        sidebar_header = {
+          enabled = false,
+        },
+        ask = {
+          start_insert = false,
+        },
+      },
+
+      llm = {
+        truncate_prompt = true,
+        max_input_tokens = 6144, -- Leave room for response (8192 - 2048)
+        token_buffer = 128, -- Safety margin
       },
 
       -- Add RAG configuration here
@@ -86,6 +105,7 @@ return {
         web_search = {
           enabled = true,
           provider = 'tavily',
+          max_tokens = 1024, -- Add token limit for web search responses
         },
         repository_actions = {
           enabled = true,
