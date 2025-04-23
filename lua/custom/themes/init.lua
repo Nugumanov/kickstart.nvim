@@ -1,13 +1,4 @@
 return {
-  --{
-  --  'folke/tokyonight.nvim',
-  --  priority = 1000, -- Make sure to load this before all the other start plugins.
-  --  init = function()
-  --    vim.cmd.colorscheme 'tokyonight-night'
-  --    -- You can configure highlights by doing something like:
-  --    vim.cmd.hi 'Comment gui=none' end,
-  --},
-
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -16,9 +7,20 @@ return {
       require('catppuccin').setup {
         flavour = 'macchiato',
         integrations = {
+          cmp = true,
+          gitsigns = true,
+          treesitter = true,
           neotree = true,
+          barbar = true,
+          copilot_vim = true,
+        },
+        dim_inactive = {
+          enabled = false,
+          shade = 'dark',
+          percentage = 0.05,
         },
       }
+
       vim.cmd.colorscheme 'catppuccin'
       vim.cmd.hi 'Comment gui=none'
     end,
