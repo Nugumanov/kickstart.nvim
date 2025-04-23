@@ -7,6 +7,7 @@ return {
   { import = 'custom/plugins/modules/oil' },
   --{ import = 'custom/plugins/modules/gitlab' },
   { import = 'custom/plugins/modules/vimade' },
+  { import = 'custom/plugins/modules/tabby' },
 
   { 'knubie/vim-kitty-navigator' },
 
