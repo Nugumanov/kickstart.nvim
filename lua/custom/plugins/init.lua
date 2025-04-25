@@ -8,6 +8,7 @@ return {
   --{ import = 'custom/plugins/modules/gitlab' },
   { import = 'custom/plugins/modules/vimade' },
   { import = 'custom/plugins/modules/tabby' },
+  { import = 'custom/plugins/modules/markdown-preview' },
 
   { 'knubie/vim-kitty-navigator' },
 
@@ -17,16 +18,5 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim', --[[ "nvim-telescope/telescope.nvim ]]
     },
-  },
-
-  -- install with yarn or npm
-  {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    build = 'cd app && yarn install',
-    init = function()
-      vim.g.mkdp_filetypes = { 'markdown' }
-    end,
-    ft = { 'markdown' },
   },
 }
