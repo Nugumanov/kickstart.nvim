@@ -14,10 +14,10 @@ return {
     start_in_insert = true,
     float_opts = {
       border = 'single',
-      width = 155,
-      height = 46,
+      width = 190,
+      height = 50,
       row = 6,
-      col = 20,
+      col = 10,
       winblend = 30,
       --zindex = 999,
     },
