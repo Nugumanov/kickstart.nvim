@@ -4,7 +4,7 @@ return {
   { import = 'custom/plugins/modules/toggleterm' },
   --{ import = 'custom/plugins/modules/focus' },
   { import = 'custom/plugins/modules/obsidian' },
-  { import = 'custom/plugins/modules/oil' },
+  --{ import = 'custom/plugins/modules/oil' },
   --{ import = 'custom/plugins/modules/gitlab' },
   { import = 'custom/plugins/modules/vimade' },
   { import = 'custom/plugins/modules/tabby' },
