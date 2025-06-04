@@ -9,6 +9,7 @@ return {
   { import = 'custom/plugins/modules/vimade' },
   { import = 'custom/plugins/modules/tabby' },
   { import = 'custom/plugins/modules/markdown-preview' },
+  { import = 'custom/plugins/modules/remote-sshfs' },
 
   { 'knubie/vim-kitty-navigator' },
 
