@@ -55,6 +55,7 @@ return {
         leave_dirs_open = false,
       },
       window = {
+        position = 'float',
         mappings = {
           ['\\'] = 'close_window',
           ['oa'] = 'avante_add_files', -- avante.nvim add files/folder to Avante Selected Files
