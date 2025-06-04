@@ -10,6 +10,7 @@ return {
   { import = 'custom/plugins/modules/tabby' },
   { import = 'custom/plugins/modules/markdown-preview' },
   { import = 'custom/plugins/modules/remote-sshfs' },
+  { import = 'custom/plugins/modules/mcphub' },
 
   { 'knubie/vim-kitty-navigator' },
 
