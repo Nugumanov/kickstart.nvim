@@ -484,7 +484,7 @@ require('lazy').setup(
               statusline.section_filetype = function()
                 return ''
               end
-              return statusline.section_location {} .. statusline.section_filename {}
+              return statusline.section_location {} .. statusline.section_filename {} .. ' [' .. vim.bo.fileencoding .. ']'
               --.. statusline.section_searchcount {}
               --.. statusline.section_diagnostics {}
               --.. statusline.section_lsp {}
