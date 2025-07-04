@@ -8,6 +8,7 @@ return {
   --{ import = 'custom/plugins/modules/gitlab' },
   { import = 'custom/plugins/modules/vimade' },
   { import = 'custom/plugins/modules/tabby' },
+  { import = 'custom/plugins/modules/lualine' },
   { import = 'custom/plugins/modules/markdown-preview' },
   { import = 'custom/plugins/modules/remote-sshfs' },
   { import = 'custom/plugins/modules/mcphub' },

@@ -455,11 +455,8 @@ require('lazy').setup(
         -- - sr)'  - [S]urround [R]eplace [)] [']
 
         require('mini.surround').setup()
-
         require('mini.animate').setup()
-
         require('mini.comment').setup()
-
         require('mini.pairs').setup()
 
         local blocked_filetypes = {
@@ -469,36 +466,35 @@ require('lazy').setup(
           ['AvanteInput'] = true,
         }
 
-        local statusline = require 'mini.statusline'
-
-        statusline.setup {
-          use_icons = vim.g.have_nerd_font,
-          content = {
-            active = function()
-              if blocked_filetypes[vim.bo.filetype] then
-                return ''
-              end
-              statusline.section_location = function()
-                return ''
-              end
-              statusline.section_filetype = function()
-                return ''
-              end
-              return statusline.section_location {} .. statusline.section_filename {} .. ' [' .. vim.bo.fileencoding .. ']'
-              --.. statusline.section_searchcount {}
-              --.. statusline.section_diagnostics {}
-              --.. statusline.section_lsp {}
-              --.. statusline.section_diff {}
-              --.. statusline.section_filetype {}
-            end,
-            inactive = function()
-              if blocked_filetypes[vim.bo.filetype] then
-                return ''
-              end
-              return '%F '
-            end,
-          },
-        }
+        -- local statusline = require 'mini.statusline'
+        -- statusline.setup {
+        --   use_icons = vim.g.have_nerd_font,
+        --   content = {
+        --     active = function()
+        --       if blocked_filetypes[vim.bo.filetype] then
+        --         return ''
+        --       end
+        --       statusline.section_location = function()
+        --         return ''
+        --       end
+        --       statusline.section_filetype = function()
+        --         return ''
+        --       end
+        --       return statusline.section_location {} .. statusline.section_filename {} .. ' [' .. vim.bo.fileencoding .. ']'
+        --       --.. statusline.section_searchcount {}
+        --       --.. statusline.section_diagnostics {}
+        --       --.. statusline.section_lsp {}
+        --       --.. statusline.section_diff {}
+        --       --.. statusline.section_filetype {}
+        --     end,
+        --     inactive = function()
+        --       if blocked_filetypes[vim.bo.filetype] then
+        --         return ''
+        --       end
+        --       return '%F '
+        --     end,
+        --   },
+        -- }
       end,
     },
 
