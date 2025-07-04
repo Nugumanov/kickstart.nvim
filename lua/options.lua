@@ -64,3 +64,6 @@ vim.opt.scrolloff = 15
 
 -- Winbar statusline
 vim.opt.winbar = '%=%m %f'
+
+-- Tabby save and restore session
+vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
