@@ -61,3 +61,6 @@ vim.opt.guicursor = 'n-v-c-sm:block-Cursor/lCursor-blinkwait175-blinkoff150-blin
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
+
+-- Winbar statusline
+vim.opt.winbar = '%=%m %f'
