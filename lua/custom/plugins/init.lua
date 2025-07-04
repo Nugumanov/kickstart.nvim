@@ -12,6 +12,7 @@ return {
   { import = 'custom/plugins/modules/markdown-preview' },
   { import = 'custom/plugins/modules/remote-sshfs' },
   { import = 'custom/plugins/modules/mcphub' },
+  { import = 'custom/plugins/modules/auto-session' },
 
   { 'knubie/vim-kitty-navigator' },
 
