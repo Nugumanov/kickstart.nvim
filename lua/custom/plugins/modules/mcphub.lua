@@ -11,6 +11,12 @@ return {
       port = 3000, -- Default hub port
       config = vim.fn.expand '~/.config/mcphub/servers.json', -- Absolute path required
 
+      extensions = {
+        avante = {
+          make_slash_commands = true, -- make /slash commands from MCP server prompts
+        },
+      },
+
       -- Optional customization
       log = {
         level = vim.log.levels.WARN, -- DEBUG, INFO, WARN, ERROR
