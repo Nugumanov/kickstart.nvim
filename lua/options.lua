@@ -5,6 +5,13 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.opt.shortmess:append 'I' -- Suppresses the default startup messages
+--vim.api.nvim_create_autocmd('VimEnter', { command = 'enew' })
+--vim.api.nvim_create_autocmd('VimEnter', { command = 'startinsert' })
+
+vim.g.mapleader = ';'
+vim.g.maplocalleader = ';'
+vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -61,3 +68,9 @@ vim.opt.guicursor = 'n-v-c-sm:block-Cursor/lCursor-blinkwait175-blinkoff150-blin
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
+
+-- Winbar statusline
+vim.opt.winbar = '%=%m %f'
+
+-- Tabby save and restore session
+vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'

@@ -49,16 +49,28 @@ return {
 
     opts = {
       provider = 'deepseek',
-      vendors = {
+      mode = 'legacy',
+      behaviour = {
+        cursor_planning = false,
+        auto_approve_tool_permissions = true,
+      },
+      providers = {
         deepseek = {
+          mode = 'legacy',
+          behaviour = {
+            cursor_planning = false,
+            auto_approve_tool_permissions = true,
+          },
           __inherited_from = 'openai',
           api_key_name = 'DEEPSEEK_API_KEY',
           endpoint = 'https://api.deepseek.com',
           model = 'deepseek-coder',
           -- Add DeepSeek-specific token limits
-          max_tokens = 4096, -- Reduced from default OpenAI values
           context_window = 8192, -- Matches DeepSeek's maximum context length
-          temperature = 0.7,
+          extra_request_body = {
+            temperature = 0.7,
+            max_tokens = 4096, -- Reduced from default OpenAI values
+          },
         },
       },
 
