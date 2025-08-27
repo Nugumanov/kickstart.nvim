@@ -5,6 +5,13 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.opt.shortmess:append 'I' -- Suppresses the default startup messages
+--vim.api.nvim_create_autocmd('VimEnter', { command = 'enew' })
+--vim.api.nvim_create_autocmd('VimEnter', { command = 'startinsert' })
+
+vim.g.mapleader = ';'
+vim.g.maplocalleader = ';'
+vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 

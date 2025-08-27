@@ -36,8 +36,18 @@ return {
 
     opts = {
       provider = 'deepseek',
+      mode = 'legacy',
+      behaviour = {
+        cursor_planning = false,
+        auto_approve_tool_permissions = true,
+      },
       providers = {
         deepseek = {
+          mode = 'legacy',
+          behaviour = {
+            cursor_planning = false,
+            auto_approve_tool_permissions = true,
+          },
           __inherited_from = 'openai',
           api_key_name = 'DEEPSEEK_API_KEY',
           endpoint = 'https://api.deepseek.com',
