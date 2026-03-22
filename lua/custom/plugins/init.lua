@@ -2,12 +2,13 @@
 -- This file stays custom so upstream Kickstart updates do not overwrite it.
 
 return {
+  { import = 'custom/plugins/modules/kickstart-overrides' },
   { import = 'custom/plugins/modules/vim-fugitive' },
-  { import = 'custom/plugins/modules/avante' },
+  --{ import = 'custom/plugins/modules/avante' },
   { import = 'custom/plugins/modules/codex' },
   { import = 'custom/plugins/modules/toggleterm' },
   --{ import = 'custom/plugins/modules/focus' },
-  { import = 'custom/plugins/modules/obsidian' },
+  --{ import = 'custom/plugins/modules/obsidian' },
   --{ import = 'custom/plugins/modules/oil' },
   --{ import = 'custom/plugins/modules/gitlab' },
   { import = 'custom/plugins/modules/vimade' },
@@ -15,7 +16,7 @@ return {
   { import = 'custom/plugins/modules/lualine' },
   { import = 'custom/plugins/modules/markdown-preview' },
   { import = 'custom/plugins/modules/remote-sshfs' },
-  { import = 'custom/plugins/modules/mcphub' },
+  --{ import = 'custom/plugins/modules/mcphub' },
   { import = 'custom/plugins/modules/auto-session' },
 
   { 'knubie/vim-kitty-navigator' },

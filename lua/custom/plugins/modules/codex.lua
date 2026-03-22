@@ -5,9 +5,7 @@ return {
     keys = {
       {
         '<leader>cc',
-        function()
-          require('codex').toggle()
-        end,
+        function() require('codex').toggle() end,
         desc = 'Toggle Codex',
         mode = { 'n', 't' },
       },
@@ -22,7 +20,7 @@ return {
       height = 0.8,
       model = nil,
       autoinstall = false,
-      panel = false,
+      panel = true,
       use_buffer = false,
     },
   },

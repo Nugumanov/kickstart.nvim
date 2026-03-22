@@ -6,7 +6,7 @@ return {
     config = function()
       -- Read theme state from kitty toggle script
       local function get_flavour()
-        local state_file = vim.fn.expand('~/.config/kitty/.theme')
+        local state_file = vim.fn.expand '~/.config/kitty/.theme'
         if vim.fn.filereadable(state_file) == 1 then
           local line = vim.fn.readfile(state_file)[1]
           if line == 'light' then return 'latte' end
@@ -24,7 +24,7 @@ return {
             gitsigns = true,
             treesitter = true,
             neotree = true,
-            barbar = true,
+            --barbar = true,
             copilot_vim = true,
           },
           dim_inactive = {
