@@ -1,3 +1,6 @@
+-- You can add your own plugins here or in other files in this directory.
+-- This file stays custom so upstream Kickstart updates do not overwrite it.
+
 return {
   { import = 'custom/plugins/modules/vim-fugitive' },
   { import = 'custom/plugins/modules/avante' },
