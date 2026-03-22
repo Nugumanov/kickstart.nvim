@@ -1,6 +1,7 @@
 return {
   { import = 'custom/plugins/modules/vim-fugitive' },
   { import = 'custom/plugins/modules/avante' },
+  { import = 'custom/plugins/modules/codex' },
   { import = 'custom/plugins/modules/toggleterm' },
   --{ import = 'custom/plugins/modules/focus' },
   { import = 'custom/plugins/modules/obsidian' },
