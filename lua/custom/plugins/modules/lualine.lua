@@ -5,6 +5,7 @@ return {
     require('lualine').setup {
       options = {
         globalstatus = true,
+        theme = 'catppuccin-nvim',
       },
       sections = {
         lualine_a = { 'mode' },
