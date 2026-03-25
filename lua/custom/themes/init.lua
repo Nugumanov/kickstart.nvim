@@ -4,6 +4,8 @@ return {
     name = 'catppuccin',
     priority = 1000,
     config = function()
+      local current_flavour
+
       -- Read theme state from kitty toggle script
       local function get_flavour()
         local state_file = vim.fn.expand '~/.config/kitty/.theme'
@@ -14,8 +16,22 @@ return {
         return 'macchiato' -- default: dark
       end
 
-      local function apply_theme()
+      local function refresh_lualine()
+        local ok, lualine = pcall(require, 'lualine')
+        if not ok then
+          return
+        end
+
+        lualine.setup(lualine.get_config())
+      end
+
+      local function apply_theme(force)
         local flavour = get_flavour()
+        if not force and flavour == current_flavour then
+          return
+        end
+
+        current_flavour = flavour
         require('catppuccin').setup {
           flavour = flavour,
           transparent_background = true,
@@ -35,13 +51,15 @@ return {
         }
         vim.cmd.colorscheme 'catppuccin'
         vim.cmd.hi 'Comment gui=none'
+
+        vim.schedule(refresh_lualine)
       end
 
-      apply_theme()
+      apply_theme(true)
 
       -- Re-apply theme when kitty's toggle-theme.sh switches while nvim is open
       vim.api.nvim_create_autocmd('FocusGained', {
-        callback = apply_theme,
+        callback = function() apply_theme(false) end,
         desc = 'Sync catppuccin flavour with kitty theme state file',
       })
     end,
